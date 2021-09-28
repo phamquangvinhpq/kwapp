@@ -1,0 +1,42 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /kwapp-core/v1/
+management:
+  endpoint:
+    health:
+      show-details: always
+      show-components: always
+  endpoints:
+    web:
+      exposure:
+        include: health,httptrace
+logging:
+  level:
+    org:
+      springframework:
+        web: TRACE
+      hibernate:
+        SQL: DEBUG
+        type:
+          descriptor:
+            sql:
+              BasicBinder: TRACE
+spring:
+  jackson:
+    property-naming-strategy: LOWER_CAMEL_CASE
+  jpa:
+    hibernate:
+      ddl-auto: update
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+  datasource:
+    url: "jdbc:postgresql://localhost:15432/kwappdb"
+    username: mykid
+    password: kw@123456
+    initialization-mode: always
+    schema: file:config/db.migration/init_db.sql
+
+kwapp:
+  redis:
+    host: localhost
+    port: 16379

@@ -1,0 +1,19 @@
+version: "3.3"
+
+services:
+  postgres:
+    image: postgres
+    ports:
+      - "15432:5432"
+    environment:
+      POSTGRES_PASSWORD: kw@123456
+      POSTGRES_USER: mykid
+      POSTGRES_DB: kwappdb
+    tmpfs:
+      - /var/lib/postgresql/data:rw
+
+  redis:
+    image: redis
+    ports:
+      - "127.0.0.1:16379:6379"
+

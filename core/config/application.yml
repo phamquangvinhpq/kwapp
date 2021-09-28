@@ -1,0 +1,60 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /kwapp-core/v1/
+management:
+  endpoint:
+    health:
+      show-details: always
+      show-components: always
+  endpoints:
+    web:
+      exposure:
+        include: health,httptrace
+logging:
+  level:
+    org:
+      springframework:
+        web: TRACE
+      hibernate:
+        SQL: DEBUG
+        type:
+          descriptor:
+            sql:
+              BasicBinder: TRACE
+spring:
+  jackson:
+    property-naming-strategy: LOWER_CAMEL_CASE
+  jpa:
+    hibernate:
+      ddl-auto: update
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+  datasource:
+    url: "jdbc:postgresql://178.128.21.15:51432/kwappdb"
+    username: mykid
+    password: kw@123456
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+  mvc:
+    async:
+      request-timeout: 300000
+authentication:
+  jwt:
+    private-key: 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
+    public-key: MIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAtpgPT7b2dl2dRynHoRh/2Q8akgkcWkiUZph0ixBAX7ldlZYyNbHzTAlBg1DaxOJIYOOdcqRdaxWyUuURHAFcYeCIbjp8ht28tbsTfm7qfl7XpU1f05MTMpbDEGRawCVFq/EIchuLm2bMQN9vHuppbiCsuTGPDjyhVD2P86VrrzM1GBUAv+4Vk39jaBdYF43ksjnLR/VCrwoZ46hPUMIVkawDCqExXyPV71Glz/W5dCxyWfG7D2hXHcsP1ieBA1j8AQyCgcuQLWA5MsVXH1CgEZMAFB8OtviCRYudjiaCJGe0g8/Kqvn/ECZMKH8xsdtIgQ7OlOfu1Y4egHKmTzKdTiad9iq8BcA/H1mbNWmRdiekMskOKVsNDTvWgIFSvuN2JOHf0llIKjlPM0fDGiwrdL0HPi5CxoH446r0oLN9HU1dEj9wmfJTCmLy7r+oL0/h2ycWNAIjy/MEYs2f0zWLrwvUVm2V7k5PfP4vbWllSY2awOfsMy+/6boZP9mLgu78x7zcaNKrE19Ph7g/P68INddxroixY04E7yeMq8GNap3/izy5HsFX0hbX6Q110FeyV9DnGLY0k1h9+Ct9XbVW84cLw/TAWVb2Jg42/YjE1wDXNdr+gwfxsBJebrjF3sB85tD/m5bt3FbB25jgSSPM0TfRlTCaML/XaKlvNIbVfWECAwEAAQ==
+    ttl: 1000h
+kwapp:
+  base-api-url: http://localhost:8080/kwapp-auth/v1/
+  redis:
+    host: localhost
+    port: 6379
+    password:
+    db-default: 1
+    timeout: 60000
+  captcha:
+    ttl: 2m
+lxfile:
+  base-url: https://unicorn-dev.firecloud.live/lxfile-core/v1
+  bucket: APP
