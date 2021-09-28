@@ -1,0 +1,13 @@
+<FindBugsFilter>
+    <Match>
+        <Class name="~.*\$ObjectFormatConverter" />
+        <Bug pattern="NP_PARAMETER_MUST_BE_NONNULL_BUT_MARKED_AS_NULLABLE,LOCAL_VARIABLE_NAMED,EI_EXPOSE_REP2"/>
+    </Match>
+    <Match>
+        <Class name="~com.ttcsolutions.lxchat.core.model.entity.*_" />
+        <Bug pattern="UUF_UNUSED_PUBLIC_OR_PROTECTED_FIELD,UWF_UNWRITTEN_PUBLIC_OR_PROTECTED_FIELD"/>
+    </Match>
+    <Match>
+        <Class name="~com.ttcsolutions.lxchat.core.mapper.*Impl" />
+    </Match>
+</FindBugsFilter>
