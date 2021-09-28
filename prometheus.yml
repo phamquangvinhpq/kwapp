@@ -1,6 +1,14 @@
+<<<<<<< HEAD
 scrape_configs:
   - job_name: 'app-metrics'
     metrics_path: '/actuator/prometheus'
     scrape_interval: 5s
     static_configs:
+=======
+scrape_configs:
+  - job_name: 'app-metrics'
+    metrics_path: '/actuator/prometheus'
+    scrape_interval: 5s
+    static_configs:
+>>>>>>> daf10530276f3f2389d7124f384b4b8f6ba0ac6e
       - targets: ['app:8080']

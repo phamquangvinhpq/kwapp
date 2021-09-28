@@ -1,4 +1,11 @@
+<<<<<<< HEAD
 rootProject.name = 'kwapp'
 include 'commons'
 include 'core'
 
+=======
+rootProject.name = 'kwapp'
+include 'commons'
+include 'core'
+
+>>>>>>> daf10530276f3f2389d7124f384b4b8f6ba0ac6e
